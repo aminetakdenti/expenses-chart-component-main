@@ -1,0 +1,152 @@
+/* Start Globale Rules */
+
+:root {
+  --Soft-red: hsl(10, 79%, 65%);
+  --Cyan: hsl(186, 34%, 60%);
+
+  --Dark-brown: hsl(25, 47%, 15%);
+  --Medium-brown: hsl(28, 10%, 53%);
+  --Cream: hsl(27, 66%, 92%);
+  --Very-pale-orange: hsl(33, 100%, 98%);
+}
+
+/* End Globale Rules */
+
+/* Start Globale Rules */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  background-color: var(--Cream);
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  font-weight: 400;
+}
+
+h1,
+h3,
+h5 {
+  font-weight: 700;
+}
+
+p {
+  font-size: 12px;
+  margin-bottom: 5px;
+  font-weight: 400;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* End Globale Rules */
+
+/* Start Card */
+
+.card {
+  width: 350px;
+}
+
+.card .header {
+  color: var(--Very-pale-orange);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: var(--Soft-red);
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+
+.card .main {
+  padding: 20px;
+  background-color: var(--Very-pale-orange);
+  border-radius: 15px;
+  color: var(--Dark-brown);
+}
+
+.card .main .diag {
+  margin-top: 30px;
+  height: 120px;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 14px;
+}
+
+.card .main .diag .progress {
+  background: none;
+  height: 100px;
+  width: 100%;
+  display: block;
+  border-radius: 5px;
+  position: relative;
+  cursor: pointer;
+  text-align: end;
+  transition: 0.3s ease;
+}
+
+.card .main .diag .progress .info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 0;
+  width: 100%;
+  border-radius: 5px;
+  background-color: var(--Soft-red);
+  transition: 0.1s ease-in-out;
+}
+
+.card .main .diag .progress .info::after {
+  content: attr(data-prog);
+  position: absolute;
+  top: -33px;
+  transform: translateX(-50%);
+  left: 50%;
+  background-color: var(--Dark-brown);
+  color: var(--Very-pale-orange);
+  padding: 5px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 700;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.card .main .diag .progress .info:hover {
+  background-color: hsl(10, 79%, 75%);
+}
+
+.card .main .diag .progress .info:hover::after {
+  opacity: 1;
+}
+
+.card .main .diag .text {
+  text-align: center;
+  margin: 4px auto;
+}
+
+.card .main > .info {
+  padding-top: 15px;
+  margin-top: 10px;
+  display: flex;
+  border-top: 1px solid var(--Cream);
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.card .main > .info p {
+  color: var(--Medium-brown);
+}
+
+.card .main > .info .right {
+  text-align: right;
+}
+
+/* Start Card */
